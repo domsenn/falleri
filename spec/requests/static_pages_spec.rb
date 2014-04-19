@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 describe "Static pages" do
+  let(:base_title) { "falleri - Schweizer Kinderlieder | " }
 
   describe "Home page" do
 
@@ -11,7 +12,7 @@ describe "Static pages" do
 
     it "should have the right title" do
     	visit '/static_pages/home'
-    	expect(page).to have_title('falleri - Schweizer Kinderlieder | Home')
+    	expect(page).to have_title("falleri - Schweizer Kinderlieder")
     end
 
   end
@@ -25,7 +26,7 @@ describe "Static pages" do
 
     it "should have the right title" do
     	visit '/static_pages/help'
-    	expect(page).to have_title('falleri - Schweizer Kinderlieder | Hilfe')
+    	expect(page).to have_title("#{base_title} Hilfe")
     end
 
   end
@@ -39,7 +40,7 @@ describe "Static pages" do
 
     it "should have the right title" do
     	visit '/static_pages/about'
-    	expect(page).to have_title('falleri - Schweizer Kinderlieder | Über uns')
+    	expect(page).to have_title("#{base_title} Über uns")
     end
 
   end
@@ -53,7 +54,7 @@ describe "Static pages" do
 
     it "should have the right title" do
     	visit '/static_pages/contact'
-    	expect(page).to have_title('falleri - Schweizer Kinderlieder | Kontakt')
+    	expect(page).to have_title("#{base_title} Kontakt")
     end
 
   end
